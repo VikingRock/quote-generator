@@ -4,6 +4,7 @@ var AJAX_TIMEOUT = 10000;
 var quote = '';
 var text = document.querySelector('.quote-text');
 var author = document.querySelector('.quote-author');
+var social = document.querySelector('.social');
 
 function getQuote() {
   var xhr = new XMLHttpRequest();
@@ -37,8 +38,14 @@ function getQuote() {
 
   xhr.send();
 }
+function addTwit() {
+  window.location = "https://twitter.com/intent/tweet?text=" + quote.quote + " - (c) " + quote.author;
+}
 
 var quoteBtn = document.querySelector('.get-quote');
 
 window.addEventListener('load',getQuote);
 quoteBtn.addEventListener('click', getQuote);
+social.addEventListener('click', addTwit);
+
+//https://twitter.com/intent/tweet?text=

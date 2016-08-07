@@ -9,14 +9,45 @@ html {
 }
 body {
   min-height:100%;
-  background-color: seashell;
+  background-color: @bg-color-blue;
 }
 
 .panel {
   .well();
   .well-lg();
+  padding: 70px;
+  max-width: 550px;
+  margin: 100px auto;
+  color: @bg-color-blue;
+
+
+  & .quote-author,
+  & footer:after{
+    color: @bg-color-blue;
+  }
+
+  blockquote {
+    border-color: @bg-color-blue;
+  }
+
+ & .quote-text {
+   font-size: 2rem;
+   text-align: center;
+ }
 }
 
 .page-main {
   padding: 20px 20%;
+}
+
+.social {
+  .make-md-column(1);
+  text-indent:999px;
+  //width: 30px;
+  //height: 30px;
+  background: coral url('../img/twitter.svg') 50% no-repeat;
+  background-size: 20px;
+  .button-variant(white; @bg-color-blue; @bg-color-blue);
+  border-radius: 5px;
+  padding: 5px;
 }
